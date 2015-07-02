@@ -20,7 +20,7 @@ So here's how to hack together a now playing button for Slack (until we can get 
         * [Firefox*](https://addons.mozilla.org/en-us/firefox/addon/foxyscrobbler/)  
         * IE - *see above link*  
 **Note: Haven't tried these so not quite sure which services they work with*
-* Grab [this userscript](http://pastebin.com/T382qAvd) I hacked together
+* Install the userscript.js from this repo
 * Edit the userscript with your username and API key for last.fm
 
 That should be it.. Now press the music button in Slack to paste your current / last scrobble song to the chat.  
