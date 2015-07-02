@@ -19,11 +19,45 @@ var apiKey = "your lastfm api key";
 console.log('Starting LFM NP 3');
 
 var messageInput = $('#message-input');
-//var npButton = $('<a onclick="return false;" id="now_playing_button" style="line-height: 36px; padding: 0px 0.5rem; border: 2px solid rgb(224, 224, 224); text-align: center; font-size: 1.5rem; text-shadow: white 0px 1px 1px; width: 44px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0.2rem; border-top-left-radius: 0.2rem; position: absolute; bottom: 22px; left: 63px; background-clip: padding-box;"><i class="fa fa-music"></i></a>');
+
 var npButton = $('#primary_file_button').clone().attr('id', 'now_playing_button').removeClass('file_upload_btn');
-var buttonCss = {'line-height': '36px', 'padding': '0 .5rem', 'border': '2px solid #e0e0e0', 'text-align': 'center', 'font-size': '1.5rem', 'text-shadow': '0 1px 1px white', 'width': '46px', 'height': '41px', 'background-clip': 'padding-box', 'border-top-right-radius': '0', 'border-bottom-right-radius': '0', 'border-bottom-left-radius': '.2rem', 'border-top-left-radius': '.2rem', 'position': 'absolute', 'bottom': '22px', 'left': '62px','background-color': 'rgba(0, 0, 0, 0)', 'background-image': '-webkit-gradient(linear, 0% 100%, 0% 0%, from(rgb(239, 239, 239)), to(rgb(255, 255, 255)))', 'background-origin': 'padding-box', 'background-size': 'auto', 'background-attachment': 'scroll', '-webkit-background-origin': 'padding-box', '-webkit-background-size': 'auto' } ;
+//var buttonCss = {'line-height': '36px', 'padding': '0 .5rem', 'border': '2px solid #e0e0e0', 'text-align': 'center', 'font-size': '1.5rem', 'text-shadow': '0 1px 1px white', 'width': '46px', 'height': '41px', 'background-clip': 'padding-box', 'border-top-right-radius': '0', 'border-bottom-right-radius': '0', 'border-bottom-left-radius': '.2rem', 'border-top-left-radius': '.2rem', 'position': 'absolute', 'bottom': '22px', 'left': '62px','background-color': 'rgba(0, 0, 0, 0)', 'background-image': '-webkit-gradient(linear, 0% 100%, 0% 0%, from(rgb(239, 239, 239)), to(rgb(255, 255, 255)))', 'background-origin': 'padding-box', 'background-size': 'auto', 'background-attachment': 'scroll', '-webkit-background-origin': 'padding-box', '-webkit-background-size': 'auto' } ;
+var buttonCss = {
+    '-webkit-font-smoothing': 'antialiased',
+    '-webkit-user-select': 'none',
+    'background-image': 'url("https://cdn0.iconfinder.com/data/icons/yooicons_set01_socialbookmarks/512/social_lastfm_box_red.png")',
+    'background-repeat': 'no-repeat',
+    'background-position': 'center',
+    'background-size': 'contain !important',
+    'bottom': '0px',
+    'box-sizing': 'border-box',
+    'color': 'rgba(0, 0, 0, 0.34902)',
+    'cursor': 'pointer',
+    'display': 'block',
+    'font-family': 'Emoji Passthrough',
+    'font-size': '23.9999980926514px',
+    'height': '41.9965286254883px',
+    'left': '-86px',
+    'line-height': '42px',
+    'max-height': '160px',
+    'min-height': '42px',
+    'padding-bottom': '0px',
+    'padding-left': '0px',
+    'padding-right': '0px',
+    'padding-top': '0px',
+    'position': 'absolute',
+    'text-align': 'center',
+    'text-decoration': 'none',
+    'text-shadow': 'none',
+    'transition-delay': '0s, 0s, 0s',
+    'transition-duration': '0.1s, 0.1s, 0.1s',
+    'transition-property': 'background, border-color, color',
+    'transition-timing-function': 'ease, ease, ease',
+    'width': '43.9930572509766px'
+};
 npButton.css(buttonCss);
-npButton.find('i').removeClass('fa-arrow-circle-o-up').addClass('fa-music')
+npButton.find('i').removeClass('ts_icon ts_icon_plus_thick');
+npButton.css('background-size', 'contain')
 
 var lfmApiUrl = "https://ws.audioscrobbler.com/2.0/";
 
