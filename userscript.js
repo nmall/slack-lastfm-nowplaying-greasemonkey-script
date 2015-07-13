@@ -73,6 +73,10 @@ var makePost = function(name, album, artist, genre, url, imgUrl){
 	return '[ *' + name + '* ] _by_ [ *' + artist + '* ] _on_ [ *' + album + '* ] [_' + genre + '_]- ' + imgUrl; 
 };
 
+var randomToken = function(){
+	return Math.random().toString(36).substring(7);
+}
+
 var npButtonClick = function(e) {
     $.get(lfmApiUrl, trackData, function( responseData ) {
         var track = responseData.recenttracks.track;
@@ -86,7 +90,7 @@ var npButtonClick = function(e) {
 		var name = track.name;
         var artist = track.artist['#text']
         var url = track.url;
-        var imgUrl = track.image[2]['#text'];
+        var imgUrl = track.image[2]['#text'] + "?t=" + randomToken();
         
         artistData.artist = artist;
         $.get(lfmApiUrl, artistData, function( responseData ) {
